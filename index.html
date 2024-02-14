@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Ayur Scan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+       font-family:Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    }
+    body{
+       background-color: beige;
+    }
+    /* Navigation----------------------- */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    background: rgb(10, 48, 24);
+    z-index: 10;
+    /* position: fixed; */
+}
+
+nav div {
+    color: white;
+    font-size: 4rem;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    visibility: hidden;
+}
+.visible-title {
+    visibility: visible;
+}
+
+nav ul { 
+    list-style-type: none;
+    margin: 0 2% auto 0;
+    padding-left: 0;
+    text-align: right;
+    max-width: 100%;
+}
+nav ul li { 
+    display: inline-block; 
+    line-height: 60px;
+    font-size: 19px;
+    margin-left: 10px;
+}
+nav ul li a {
+    text-decoration: none; 
+    color: #ffffff;
+}
+#img4{
+    height: 250px;
+    width: 250px;
+    float: left;
+}
+.bg_img{
+        background-image: url("https://img.freepik.com/free-photo/flat-lay-green-leaves-assortment_23-2148831253.jpg?w=900&t=st=1695792564~exp=1695793164~hmac=bf61982af0f96fac53c48de8824954b77ba703ce28f9be375c13fa6c4113fef2");
+        background-repeat: no-repeat;
+        background-size:cover;
+        height: 79vh;
+        width: 100%;
+
+}
+#topic_name{
+    color: rgb(25, 73, 43);
+    font-size: 60px;
+    text-align: center;
+    border:1px solid transparent;
+    margin: 20px;
+    border-radius: 20px;
+    size: 50px 50px 50px 50px;
+    padding-top: 30px;
+    padding: 25px;
+}
+
+#eh{
+font-size: 45px;
+align-items: center;
+color: rgb(25, 73, 43);
+text-align: center;
+margin:2px;
+padding: 3px;
+
+}
+.blog-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:20px 0px;
+        flex-wrap: wrap;
+
+       }
+       .blog-box{
+        width: 350px;
+        background-color: #f5f5ea;
+        border:1px solid #ececec;
+        margin: 20px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(79, 79, 79, 0.5) 0px 2px 15px 0px;
+
+       }
+       .blog-img{
+        width: 100%;
+        height: auto;
+
+       }
+       .blog-img img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(79, 79, 79, 0.5) 0px 2px 15px 0px;
+       }
+       .blog-img2 img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.5) 0px 2px 15px 0px;
+       }
+       .blog-img3 img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.5) 0px 2px 15px 0px;
+       }
+       .blog-text{
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+
+       }
+       .blog-text span{
+        color:#f33c3c;
+        font-size: 0.9rem;
+           
+    }
+    .blog-text .blog-title{
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #272727;
+    }
+    .blog-text .blog-title :hover{
+        color: #f33c3c;
+        transition: all ease 0.3s;
+        
+    }
+    .blog-text p{
+        color: #9b9b9b;
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow:scroll;
+        overflow-x: visible;
+        text-overflow: ellipsis;
+        margin: 25px 0px;
+
+    }
+    .blog-text a{
+        color: #0f0f0f;
+
+    }
+    .blog-text a :hover{
+        color: #f33c3c;
+        transition: all ease 0.3s;
+    }
+    @media(max-width:1250px){
+        .blog-box{
+            width: 300px;
+        }
+    }
+    @media(max-width:1100px){
+        .blog-box{
+            width: 70%;
+        }
+    }
+    @media(max-width:550px){
+        .blog-box{
+            margin: 20px 10px;
+            width:100%
+
+        }
+        #blog{
+            padding:20px;
+        }
+    }
+
+
+/* MEDICAL PLANTSSSSSSSSSSSSSSSSSSS CSSSS */
+
+.wrap {
+  height: 100%; 
+  
+}
+.card {
+  display: flex;
+  flex: 0 0 auto;
+  background: #fff;
+  max-width: 700px;
+  margin: 80px 0;
+  float: left;
+  border-radius: b-r;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.5) 0px 2px 15px 0px;
+    }
+.card2 {
+  display: flex;
+  flex: 0 0 auto;
+  background: #fff;
+  max-width: 700px;
+  margin: 80px 0;
+  float: right;
+  border-radius: b-r;
+  box-shadow: rgba(255, 255, 255, 0.4) 0px 2px 5px 0px,
+    rgba(216, 216, 216, 0.5) 0px 2px 15px 0px;}
+.card-pic-wrap {
+  border-radius: b-r 0 0 b-r;
+  width: 300px;
+  flex: 0 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, #9fd483, #8dc26f);
+  
+}
+.card-pic-wrap img {
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    margin-left: -175px;
+    width: 350px;
+  }
+  .card-pic-wrap #img2 {
+    position: absolute;
+    bottom: -1em;
+    left: 50%;
+    margin-left: -175px;
+    width: 350px;
+  }
+.card-content {
+  padding: 3em 4em 2em;
+}
+h3 {
+  font-family: 'PT Serif', serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin: 0 0 1em;
+}
+#nava {
+  background: #8dc26f;
+  color: #fff;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  line-height: 50px;
+  display: inline-block;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 1.5em;
+  text-transform: uppercase;
+  border: 1px solid rgba(0,0,0,0.1);
+  &:hover {
+    background-color: #70a751;
+  }
+}
+
+@media (max-width: 790px) {
+  body {
+    overflow-x: hidden;
+  }
+  .wrap {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .card {
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .card-pic-wrap {
+    width: 100%;
+    border-radius: b-r b-r 0 0;
+    img {
+      bottom: 20px;
+      position: relative;
+    }
+  }
+  .card-content {
+    padding: 2em 2em 1em;
+  } 
+}
+
+/* ENNDDDDDDD OF MEDICAL PLATS CSS */
+
+/* INPUT CSSSSS  */
+input{
+  display:none;
+}
+
+#strt{
+  color: #fdfdfd;
+  font-size: 23px;
+
+  height: 35px;
+  width: 79px;
+  background-color: #203812;
+   border: 1px solid hsl(150, 62%, 16%);
+   border-radius: 6px;
+}
+#image-input{
+  color: #fdfdfd;
+  font-size: 20px;
+  text-align: center;
+  object-position: center;
+  height: auto;
+  width:auto;
+  background-color: #203812;
+   border: 1px solid hsl(150, 62%, 16%);
+   border-radius: 6px;
+
+}
+
+/* INPUT CSSSS END */
+
+  /* Footer CSSS */
+   #foot{
+            background-color: rgb(10, 48, 24);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            position:fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+  /* FOOTER CSSS END  */
+
+</style>
+    
+</head>
+<body>
+
+    <div id="headbar">
+        
+        
+
+        <ul>
+            <nav>
+                <ul>
+
+                    <li class='link'><a href= "#home" >Home</a></li>
+                    <li class='link'><a href="#blog">Blogs</li></a>
+                    <li class='link'><a href="#wrap">Medicinal Plants</li></a>
+                    <!-- <li><a href="contact.html">Contact Us</li></a> -->
+                <ul>
+            </nav>
+        
+        
+           
+
+        </ul>
+        
+        </div>
+        <div id="home" class="bg_img">
+            <h1 id="topic_name">AYUR SCAN  <br>
+              
+
+              
+              <button id="strt" type="button" onclick="init()">Start</button>
+              <input type="file" accept="image/*" id="image-input" style="display:none;"></h1>
+              <div id="webcam-container"></div>
+              <div id="label-container"></div>
+              <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+              <script type="text/javascript">
+                const URL = "https://teachablemachine.withgoogle.com/models/NrbueuMTc/";
+        
+                let model, labelContainer, maxPredictions;
+        
+                async function init() {
+                    const modelURL = URL + "model.json";
+                    const metadataURL = URL + "metadata.json";
+        
+                    model = await tmImage.load(modelURL, metadataURL);
+                    maxPredictions = model.getTotalClasses();
+        
+                    document.getElementById("webcam-container").innerHTML = "";
+                    labelContainer = document.getElementById("label-container");
+                    labelContainer.innerHTML = "";
+                    for (let i = 0; i < maxPredictions; i++) {
+                        labelContainer.appendChild(document.createElement("div"));
+                    }
+        
+                    document.getElementById("image-input").style.display = "block";
+                }
+        
+                async function handleFileSelect(event) {
+                    const file = event.target.files[0];
+                    const img = new Image();
+                    const reader = new FileReader();
+        
+                    reader.onload = function(e) {
+                        img.src = e.target.result;
+                    };
+        
+                    img.onload = async function() {
+                        await predict(img);
+                    };
+        
+                    reader.readAsDataURL(file);
+                }
+        
+                document.getElementById("image-input").addEventListener("change", handleFileSelect);
+        
+                async function predict(img) {
+                    const prediction = await model.predict(img);
+                    for (let i = 0; i < maxPredictions; i++) {
+                        const classPrediction =
+                            prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                        labelContainer.childNodes[i].innerHTML = classPrediction;
+                    }
+                }
+            </script>
+        </div>
+
+        <br><br>
+<div id="blog" class="blog">
+
+<h2 id="eh">Blogs</h2>
+<div class="blog-container">'
+    <!-- box-1 ------>
+    <div class="blog-box">
+        <div class="blog-img">
+            <img src="https://i.pinimg.com/564x/84/b9/9a/84b99a0c99cc491035b04ef64a724d1d.jpg" alt="blog">
+        </div>
+        
+        <!--text-->
+        <div class="blog-text">
+           <span>18 September 2023 / The Digital Resurgence </span> 
+           "Harmony in Health: Advancing Ayurvedic Medicine with Technology"        </a>
+           <p>Ayurveda, with its holistic approach to well-being, is undergoing a renaissance in the digital era. The integration of technology has  opened new avenues for research, accessibility, and personalized health solutions rooted in Ayurvedic principles.</p>
+        </div>
+    </div>
+
+     <!-- box-2-------------------------->
+     <div class="blog-box">
+        <div class="blog-img2">
+            <img src="https://i.pinimg.com/564x/69/42/7c/69427c77f1117da264af8dd85c918b63.jpg" alt="blog">
+        </div>
+        
+        <!--text-->
+        <div class="blog-text">
+           <span>01 October 2023 / Precision Herbal </span> 
+           "Empowering Herbal Enthusiasts: The Ayur Scan Community"
+        </a>
+           <p>
+            Delve into the community aspect of Ayur Scan. Discuss how the platform fosters collaboration among herbal enthusiasts, researchers, and traditional healers. Highlight user contributions, feedback mechanisms, and the wealth of knowledge shared within the Ayur Scan community. Showcase real stories of users benefiting from the platform.               </p>
+        </div>
+    </div>
+         <!-- box-3------------------------>
+    <div class="blog-box">
+            <div class="blog-img3">
+                <img src="https://i.pinimg.com/564x/ab/be/94/abbe94951259c8b088d26d291c11e310.jpg" alt="blog">
+
+            </div>
+            
+            <!--text-->
+            <div class="blog-text"> 
+               <span>October 20, 2023 - Genesis of Ayur Scan</span> 
+                "Behind the Scenes: Developing Ayur Scan's AI-Powered Plant Recognition"
+            </a>
+               <p>
+                Offer a behind-the-scenes look at the development process of Ayur Scan. Detail the steps from data collection and preprocessing to model training and integration. Highlight the role of AI and machine learning in achieving accurate plant identification. Discuss challenges faced and innovative solutions employed in creating the Ayur Scan platform.                </p>
+            </div>
+    </div>
+
+
+</div>
+
+</div>
+
+
+<!-- MEDICALS PLANTSSSSS -->
+
+<div class="wrap" id="wrap">
+    <h2 id="eh">MEDICINAL PLANTS</h2>
+
+    <div class="card">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/xGRDjVv/Holy-Basil-Powder-Tulsi-Organic-1-lb-removebg-preview.png" alt="A leafy plant">
+
+      </div>
+      <div class="card-content">
+        <h3>Tulsi <br>(Holy Basil)</h3>
+        <p>Tulsi is known for its immunity-boosting and antibacterial properties. It is used for treating coughs, colds, and respiratory ailments. It also helps in reducing stress and promoting overall well-being.</p>
+        <p><a href="#0" id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+
+    <div class="card2">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/qNKXGs8/Fresh-Neem-Leaf-Leaves-Neem-Leaf-Neem-Leaves-Dried-Neem-Leaf-Dried-Neem-Leaves-Fresh-Neem-Leaves-rem.png"  id="img2" alt="Some pointy plants">
+      </div>
+      <div class="card-content">
+        <h3>Neem</h3>
+        <p> Neem leaves have antibacterial, antifungal, and blood-purifying properties. They are used for skin conditions like acne, as well as for dental health and digestion.
+        </p>
+        <p><a href="#0"id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+
+<div class="card">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/Xkc68vD/Premium-Photo-Fresh-green-aloe-vera-leaves-on-white-background-removebg-preview.png" alt="A leafy plant">
+
+      </div>
+      <div class="card-content">
+        <h3>Aloe Vera</h3>
+        <p> Aloe Vera leaves are known for their soothing and healing properties. They are used for skin conditions, burns, and to promote digestive health.</p>
+        <p><a href="#0" id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+
+
+    <div class="card2">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/MfPN2Zn/How-To-Use-Curry-Leaves-For-Hair-Growth-removebg-preview.png"  id="img2" alt="Some pointy plants">
+      </div>
+      <div class="card-content">
+        <h3>Curry Leaves</h3>
+        <p> Curry leaves are used in Ayurveda for their digestive and carminative properties. They help in managing indigestion and diarrhea.
+        </p>
+        <p><a href="#0"id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/fvpNvcC/ASHWAGANDHA-removebg-preview.png" alt="A leafy plant">
+
+      </div>
+      <div class="card-content">
+        <h3>Ashwagandha</h3>
+        <p> Although the root is more commonly used, Ashwagandha leaves also have medicinal value. They are used to reduce stress, improve cognitive function, and enhance vitality.</p>
+        <p><a href="#0" id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+
+
+    <div class="card2">
+      <div class="card-pic-wrap">
+        <img src="https://i.ibb.co/rk0KYpv/Brahmi-Kapseln-bacopa-Monnieri-100-Ohne-F-llstoffe-removebg-preview.png"  id="img2" alt="Some pointy plants">
+      </div>
+      <div class="card-content">
+        <h3>Brahmi</h3>
+        <p> Brahmi leaves are used for their memory-enhancing and cognitive-boosting properties. They are often used in Ayurvedic preparations for mental clarity.
+        </p>
+        <p><a href="#0"id="nava">Ayurvedic</a></p>
+      </div>
+    </div>
+ 
+   
+  <div class="card">
+    <div class="card-pic-wrap">
+      <img src="https://i.ibb.co/zNMkPfd/Organic-Dried-Moringa-Leaves-Powder-100g-Energy-Booster-Etsy-removebg-preview.png" alt="A leafy plant">
+
+    </div>
+    <div class="card-content">
+      <h3>Moringa</h3>
+      <p> Moringa leaves are rich in vitamins and minerals. They are used for their nutritional value and are believed to have anti-inflammatory and antioxidant properties.</p>
+      <p><a href="#0" id="nava">Ayurvedic</a></p>
+    </div>
+  </div> 
+ 
+  <div class="card2">
+    <div class="card-pic-wrap">
+      <img src="https://i.ibb.co/Cm7wyfb/Tinospora-cordifolia-20-seeds-Kanda-Amrta-Moonseed-Guduchi-Giloy-removebg-preview.png"  id="img2" alt="Some pointy plants">
+    </div>
+    <div class="card-content">
+      <h3>Guduchi <br> (Giloy)</h3>
+      <p>  Guduchi leaves are used to boost the immune system and for their anti-inflammatory properties. They are often used in Ayurvedic remedies for fever and respiratory issues.    </p>
+      <p><a href="#0"id="nava">Ayurvedic</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-pic-wrap">
+      <img src="https://i.ibb.co/86RJnC5/400-Dried-Bael-Leaves-Half-Sun-dried-Bael-Leaves-Bael-Fruit-Leaves-Dried-Bael-Leaves-Tea-Bilva-Leave.png" alt="A leafy plant">
+
+    </div>
+    <div class="card-content">
+      <h3>Bilva <br>(Bael)</h3>
+      <p>  Bilva leaves are used in Ayurveda for their digestive benefits. They are known to relieve digestive problems like diarrhea and dysentery.</p>
+      <p><a href="#0" id="nava">Ayurvedic</a></p>
+    </div>
+  </div> 
+
+</div>
+<!-- <div id="foot">
+  <footer>
+    <ul>
+      <nav>
+          <ul>
+
+              <li class='link'><a href= "#home" >Home</a></li>
+              <li class='link'><a href="#blog">Blogs</li></a>
+              <li class='link'><a href="#wrap">Medicinal Plants</li></a> -->
+              <!-- <li><a href="contact.html">Contact Us</li></a> -->
+          <!-- <ul>
+      </nav>
+  
+  
+     
+
+  </ul>
+    <p>&copy; 2023 Ayur Scan. All rights reserved.</p>
+</footer>
+
+</div> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
